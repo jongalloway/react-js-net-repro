@@ -1,4 +1,4 @@
-﻿{
+{
   "webroot": "wwwroot",
   "userSecretsId": "aspnet5-React-5f6637b5-2f49-4b58-9e75-8e489de67712",
   "version": "1.0.0-*",
@@ -25,8 +25,9 @@
     "Microsoft.Framework.Configuration.UserSecrets": "1.0.0-beta7",
     "Microsoft.Framework.Logging": "1.0.0-beta7",
     "Microsoft.Framework.Logging.Console": "1.0.0-beta7",
-    "Microsoft.Framework.Logging.Debug" : "1.0.0-beta7",
-    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta7"
+    "Microsoft.Framework.Logging.Debug": "1.0.0-beta7",
+    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta7",
+    "React.AspNet": "1.5.4"
   },
 
   "commands": {
@@ -35,8 +36,7 @@
   },
 
   "frameworks": {
-    "dnx451": { },
-    "dnxcore50": { }
+    "dnx451": { }
   },
 
   "exclude": [

@@ -17,6 +17,7 @@ using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
 using React.Models;
 using React.Services;
+using React.AspNet;
 
 namespace React
 {
@@ -71,6 +72,8 @@ namespace React
                 options.ClientSecret = Configuration["Authentication:MicrosoftAccount:ClientSecret"];
             });
 
+            services.AddReact();
+
             // Add MVC services to the services container.
             services.AddMvc();
 
@@ -105,6 +108,23 @@ namespace React
                 // sends the request to the following path or controller action.
                 app.UseErrorHandler("/Home/Error");
             }
+
+            app.UseReact(config =>
+            {
+                // ES6 features are enabled by default. Uncomment the below line to disable them.
+                // See http://reactjs.net/guides/es6.html for more information.
+                //config.SetUseHarmony(false);
+                // Uncomment the below line if you are using Flow
+                // See http://reactjs.net/guides/flow.html for more information.
+                //config.SetStripTypes(true);
+                // If you want to use server-side rendering of React components,
+                // add all the necessary JavaScript files here. This includes
+                // your components as well as all of their dependencies.
+                // See http://reactjs.net/ for more information. Example:
+                //config
+                //  .AddScript("~/Scripts/First.jsx")
+                //  .AddScript("~/Scripts/Second.jsx");
+            });
 
             // Add static files to the request pipeline.
             app.UseStaticFiles();
